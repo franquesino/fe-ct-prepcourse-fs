@@ -14,7 +14,7 @@ const nuevoNumero = 5;
 const nuevoBoolean = true;
 
 // Resuelve el siguiente problema matemático.
-const nuevaResta = 10 - null === 7;
+const nuevaResta = 10 - 7 === 3;
 
 // Resuelve el siguiente problema matemático.
 const nuevaMultiplicacion = 10 * 4 === 40;
