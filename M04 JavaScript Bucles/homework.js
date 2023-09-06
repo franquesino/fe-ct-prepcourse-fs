@@ -87,7 +87,8 @@ function esEntero(num) {
    // Ejemplo: (-10) ---> true
    // De lo contrario, retorna false.
    // Tu código:
-   if(num == Number) return true
+   if (num % 1 === 0) return true
+   else return false
 }
 
 function fizzBuzz(num) {
@@ -125,12 +126,22 @@ function esPrimo(num) {
    // [Pista 2]: puedes resolverlo utilizando un `bucle for`.
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
    // Tu código:
-   if (num < 2) return false
-   for (let i = 0; i < nun.length; i++){
-      if (num % 2 === 0) return false
-      else return true
-   }
-}
+   if (num <= 1) {
+      return false;
+    }
+  
+    // Comprobamos si el número es divisible por algún número entre 2 y la raíz cuadrada del número
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) {
+        return false; // Si es divisible por algún número, no es primo
+      }
+    }
+  
+    return true; // Si no es divisible por ningún número, es primo
+  }
+  
+ 
+
 
 function esVerdadero(valor) {
    // Si "valor" es verdadero retornar "Soy verdadero".
