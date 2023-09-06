@@ -51,7 +51,8 @@ function dePalabrasAFrase(palabras) {
    // con un espacio entre cada palabra.
    // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'.
    // Tu código:
-   return palabras.concat(" ")
+   var frase = palabras.join(" ")
+   return frase
 }
 
 function arrayContiene(array, elemento) {
@@ -71,8 +72,8 @@ function agregarNumeros(arrayOfNums) {
    // Tu código:
    let suma = 0;
    for (i = 0; i < arrayOfNums.length; i++){
-      suma = suma + array[i]
-      i++
+      suma = suma + arrayOfNums[i]
+      
    }
    return suma
 }
@@ -84,24 +85,41 @@ function promedioResultadosTest(resultadosTest) {
    let promedio = 0
    let suma = 0
    for (let i = 0; i < resultadosTest.length; i++){
-      suma = suma + array[i]
+      suma = suma + resultadosTest[i]
    }
-    return suma / resultadosTest.length
+   promedio = suma / resultadosTest.length
+   return promedio
 }
 
 function numeroMasGrande(arrayOfNums) {
    // El parámetro "arrayOfNums" es un arreglo de números.
    // Retornar el número más grande.
    // Tu código:
-   return arrayOfNums.max
-}
+   let masGrande = arrayOfNums[0]
+   for (let i = 1; i < arrayOfNums.length; i++){
+      if (arrayOfNums[i] > masGrande) {
+        masGrande = arrayOfNums[i]
+     }
+   }
+   return masGrande
+   }
+
 
 function multiplicarArgumentos() {
    // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto.
    // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
    // [PISTA]: "arguments" es un arreglo.
    // Tu código:
-   arguments.arguments[i]
+   if (arguments.length === 0) { return 0 }
+   let producto = 1
+
+   for (let i = 0; i < arguments.length; i++){
+      producto *= arguments[i]
+      
+   }
+   return producto
+
+   
 }
 
 function cuentoElementos(array) {
