@@ -138,7 +138,7 @@ function diaDeLaSemana(numeroDeDia) {
    // Realiza una función que, dado el número del día de la semana, retorne: "Es fin de semana"
    // si el día corresponde a "Sábado" o "Domingo", y "Es dia laboral" en caso contrario.
    // Tu código:
-   if (numeroDeDia[0] || numeroDeDia[7]) return "Es fin de semana"
+   if (numeroDeDia  === 1|| numeroDeDia === 7) return "Es fin de semana"
    else return "Es dia laboral"
 }
 
@@ -146,18 +146,19 @@ function empiezaConNueve(num) {
    // Esta función recibe por parámetro un número.
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
-   var nueve = num.split("")
-   if (nueve[0] === 9) return true
-   else return false
+   let nueve = num.toString()
+   if (nueve[0] === '9') { return true }
+   else { return false }
 }
 
 function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
-   for (let i = 0; i < array.length; i++){
-      if (array[i] === array[i] + 1) return true
-      return false
+   
+   for (let i = 1; i < array.length; i++){
+      if (array[i] !== array[0]) return false
+      return true
    }
    
 }
@@ -168,11 +169,18 @@ function mesesDelAño(array) {
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
    let nuevoarray = []
-   for (let i = 0; i < array.length; i++){
-     if( array.includes("Enero", "Marzo", "Noviembre")){return nuevoarray.push(array[i]) }
-      else{return "No se encontraron los meses pedidos"}
+   let mesesEncontrados = ["Enero" , "Marzo" , "Noviembre"]
+   for (let i = 0; i < array.length; i++) {
+      if (mesesEncontrados.includes(array[i])){
+         nuevoarray.push(array[i])
+      }
+     
    }
-   return nuevoarray;
+   if (mesesEncontrados.length === nuevoarray.length) {
+      return nuevoarray
+   }
+   else{return "No se encontraron los meses pedidos"}
+   
 }
 
 function tablaDelSeis() {
@@ -180,8 +188,10 @@ function tablaDelSeis() {
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
    let nuevoarray = []
-   for (let i = 0; i < 10; i++) { 
-      nuevoarray.push(nuevoarray[i]*6)
+   let i = 0
+   while (i < 11) {
+      nuevoarray.push([i] * 6)
+      i++
    }
    return nuevoarray
 }
@@ -210,6 +220,26 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   let arreglo = []
+   let suma = num
+   let i = 0
+
+   do {
+      suma += 2
+      arreglo.push(suma)
+
+      if (suma === i) {
+         return "Se interrumpió la ejecución"
+      }
+      
+      i++
+   }
+  
+   
+   while (i < 10)
+   return arreglo
+
+   
 }
 
 function continueStatement(num) {
@@ -219,6 +249,25 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   let nuevoarray = []
+   let i = 0
+   let suma = num
+   
+   while (i < 10) {
+      if (i === 5) {
+         i++
+         continue
+      } else {
+         suma += 2
+         nuevoarray.push(suma)
+         
+      }
+
+
+      
+      i++
+   }
+      return nuevoarray
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
