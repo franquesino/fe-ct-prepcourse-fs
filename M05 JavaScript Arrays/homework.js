@@ -70,8 +70,11 @@ function agregarNumeros(arrayOfNums) {
    // El parámetro "arrayOfNums" debe ser un arreglo de números.
    // Suma todos los elementos y retorna el resultado.
    // Tu código:
-   let sumaNumeros = arrayOfNums.map(e => {e += e})
-   return sumaNumeros
+   let suma = 0
+   for (let i = 0; i < arrayOfNums.length; i++) {
+      suma += arrayOfNums[i]
+   }
+   return suma
 }
 
 function promedioResultadosTest(resultadosTest) {
@@ -119,7 +122,7 @@ function cuentoElementos(array) {
       array.forEach(element => {
          if(element > 18){mayora18.push(element)}
       });
-   return mayora18
+   return mayora18.length
 }
 
 function diaDeLaSemana(numeroDeDia) {
@@ -213,6 +216,19 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   let arreglo = []
+   let suma = num
+   for (i = 0; i < 10; i++){
+      suma = suma + 2
+      
+      if (suma === i) break
+         else arreglo.push(suma)
+      
+   }
+   if (i < 10) 
+      return "Se interrumpió la ejecución"
+   
+   else return arreglo
 }
 
 function continueStatement(num) {
@@ -222,6 +238,17 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   let arreglo = []
+   let suma = num
+   for (i = 0; i < 10; i++){
+      
+      
+      if (5 === i) continue
+      else suma = suma + 2
+      arreglo.push(suma)
+      
+   }
+   return arreglo
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
